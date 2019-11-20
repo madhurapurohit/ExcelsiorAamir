@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Standard Form VSRP Registration</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes, maximum-scale=1,user-scalable=no">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/stdstyle1.css">
+    <!-- for date in all browser see belown -->
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3/themes/base/jquery.ui.all.css"/>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-1.7-development-only.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.10.3/ui/jquery.ui.core.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.10.3/ui/jquery.ui.widget.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.10.3/ui/jquery.ui.datepicker.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                if(!Modernizr.inputtypes.date) {
+                    console.log("The 'date' input type is not supported, so using JQueryUI datepicker instead.");
+                    $("#theDate").datepicker();
+                }
+            });
+        </script>
+	
+	<script type="text/javascript">
+      var datefield=document.createElement("input")
+      datefield.setAttribute("type", "date")
+      if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+         document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+      }
+   </script>
+
+
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+		  // Add smooth scrolling to all links
+		  $("a").on('click', function(event) {
+
+		    // Make sure this.hash has a value before overriding default behavior
+		    if (this.hash !== "") {
+		      // Prevent default anchor click behavior
+		      event.preventDefault();
+
+		      // Store hash
+		      var hash = this.hash;
+
+		      // Using jQuery's animate() method to add smooth page scroll
+		      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+		      $('html, body').animate({
+		        scrollTop: $(hash).offset().top
+		      }, 800, function(){
+		   
+		        // Add hash (#) to URL when done scrolling (default click behavior)
+		        window.location.hash = hash;
+		      });
+		    } // End if
+		  });</script>
+		});
+		</script>
+		 <style>
+		body, html,{
+		    height: 100%;
+		}
+		#personal1,#educational1,#subject1,#qualification1,#referee1{
+			scroll-behavior: smooth;
+		}
+	</style> -->
+
+<!-- below is the start of onclick scroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	// Select all links with hashes
+$('a[href*="#personal1,#educational1,#subject1,#qualification1,#referee1"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+	<div class="col-md-12 col-xs-12" id="main_cover">
+
+
+<div class="col-md-2 col-xs-12">
+<div class="left_box" style="position: fixed;">
+    <div class="panel-group" id="">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a href="" class="">Student Data Links</a><!-- <i class="fa fa-caret-down"></i> -->
+        </h4>
+      </div>
+	<div class="list-group-hover sidebar-widget-1" style="padding:0px;">
+<!--         <ul class="list-unstyled" id="sidebarmenu1" >
+ 					<li><b><a href=# id="nav1"class="list-group-item" style="color:blue"><i class="fa fa-angle-double-right"></i>New Registration (For Non-CAP)</a></b></li>
+			
+		    <li><a href=# id="nav1" class="list-group-item "><i class="fa fa-angle-double-right"></i> Personal Information</a>
+		    </li>
+			<li><a href=# id="nav2" class="list-group-item "><i class="fa fa-angle-double-right"></i>Educational Information</a>
+			</li>
+			<li><a href=# id="nav3" class="list-group-item "><i class="fa fa-angle-double-right"></i>Qualifications</a>
+			</li>
+			<li><a href=# id="nav4" class="list-group-item "><i class="fa fa-angle-double-right"></i>Other Information</a>
+			</li>
+			<li><a href=# id="nav5" class="list-group-item "><i class="fa fa-angle-double-right"></i>Refree ONE</a>
+			</li>
+			<li><a href=# id="nav6" class="list-group-item "><i class="fa fa-angle-double-right"></i> Refree TWO</a></li>
+			
+		</ul> -->
+
+		<ul>
+			<li>
+				<a href="#personal1">Personal Information</a>
+			</li>
+			<li>
+				<a href="#educational1">Educational Information</a>
+			</li>
+			<li>
+				<a href="#subject1">subject</a>
+			</li>
+			<li>
+				<a href="#qualification1">Qualifications</a>
+			</li>
+			<li>
+				<a href="#referee1">Referee</a>
+			</li>
+		</ul>
+	</div>
+
+	</div>
+
+</div>
+
+</div>
+
+</div>
+
+	<form class="col-xs-10 col-md-10" method="POST" id="main_cover1">
+		<h1 class="topic">VSRP Complete Registration</h1>
+		<p class="note"><strong>Note:</strong>Please make sure that Adobe Reader is installed in your machine. You can download Adobe reader from <a>http://get.adobe.com/reader/otherversions/</a></p>
+
+
+
+			<div class="full_personal">
+			<div class="col-xs-12 col-md-12">
+			<div style="margin-top: 20px;">
+			<h3 class="personal" id="personal1">Personal Information</h3><br>
+			</div>
+		</div>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Name</p> 
+			</div>
+			<div class="col-md-4 col-xs-12 inputtype">
+				<input type="text" class="fa fa-" name="s_name" placeholder="Enter Full Name" required="1">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Email</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				 <input type="email" class="fa fa-" name="s_email" required="1" placeholder="Enter Email"> 	 
+			</div>
+			</div><br>
+
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Gender</p> 
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="radio" class="fa fa-" name="s_gender" value="m">MALE<br>
+				<input type="radio" class="fa fa-" name="s_gender" value="f">FEMALE<br>
+				<input type="radio" class="fa fa-" name="s_gender" value="o">OTHERS<br>
+			</div><br>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Date of Birth</p>
+			</div>
+			<div class="col-md-4 col-xs-12"> 
+				<input id="theDate" class="fa fa-" required="1" name="s_dob" type="date">
+			</div><br>
+			</div>
+
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Birth Place</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" required="1" name="s_birth">
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Nationality</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" required="1" name="s_nationality">
+			</div>
+			</div>
+
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Mobile Number</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="number" class="fa fa-" name="s_mobno">
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Telephone</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="number" class="fa fa-" required="1" name="s_tel">
+			</div>
+			</div>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Permanent Postal Address</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_add1" required="1" placeholder="Room Number,Locality"><br>
+				<input type="text" class="fa fa-" name="s_add2" required="1" placeholder="Landmark"><br>
+				<input type="text" class="fa fa-" name="s_add3" required="1" placeholder="Area"><br>
+				<input type="text" class="fa fa-" name="s_add4" required="1" placeholder="City"><br>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Address For Correspondence</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" required="1" name="s_cadd1"><br>
+				<input type="text" class="fa fa-" required="1" name="s_cadd2"><br>
+			</div>
+			</div>
+
+
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Upload Photo</p> 
+			</div>
+			<div class="col-md-10 col-xs-12"><br>
+				<label for="avatar">Profile picture (Passport Size):</label>
+        		<input type="file"
+               class="upload" required="1" name="s_photo"
+               accept="image/png, image/jpeg" />
+			</div>
+		</div>
+
+		<div class="full_educational">
+			<div class="col-xs-12 col-md-12"><br>
+			<div><br>
+			<mark><h3 class="educational" id="educational1">Educational Information</h3></mark>
+			</div>
+		</div>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">I am studying for Master`s/Bachelor`s degree in:</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" required="1" name="s_desc" placeholder="Enter Description" >
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Engineering</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_eng" required="1" placeholder="Specify Branch" >
+			</div>
+			</div>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Other Degrees</p> 
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" required="1" name="s_odeg" >
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Other Subject</p> 
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_osubject" required="1" placeholder="Other Subject" >
+			</div>
+			</div>
+
+			<div class="col-md-12">
+			<div class="col-md-6 col-xs-12"><br>
+				<p>I would like to be considered for the following Department : </p>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Department choice</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_deptchoice" required="1">
+				<option >Physcis</option>
+				<option >Chemistry</option>
+				<option >Biology</option>
+				<option >Maths</option>
+				</select>
+			</div>
+			</div><br>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Area of Research 1</p> 
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_aor1" required="1" >
+				<option >A</option>
+				<option >B</option>
+				<option >C</option>
+				<option >D</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Area of Research 2</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_aor2" required="1" >
+				<option >A</option>
+				<option >B</option>
+				<option >C</option>
+				<option >D</option>
+				</select>
+			</div>
+			</div><br>&nbsp;
+
+
+			<div class="col-md-12">
+			<div class="col-md-1 col-xs-12"><br>
+				<strong>Note :</strong> 
+			</div>
+			<div class="col-md-5 col-xs-12"><br>
+				<p>
+					In 400 words or less describe your interest in your most preferred research area.<br>
+					The write-up should particularly address questions such as:<br>
+					(1) Which area in this subject specially appeals to you?<br>
+					(2) Are there specific problems you would like to work on?<br>
+					(3) Can you suggest methods to deal with such problems?<br>
+					<b>WE WOULD LIKE THE WRITE-UP TO REFLECT YOUR ORIGINAL IDEAS</b><br>
+				</p>
+				<p><strong>The write up should not contain special characters. In particular, use of equations in write-ups is strongly discouraged.</strong> 
+			</p>
+			</div>
+			<div class="col-xs-12 col-md-6"><br>
+			<!-- <textarea rows="12" cols="50" maxlength="400" placeholder="400 words only" name="s_dyi">
+			</textarea>  -->
+			<textarea class="textarea" id="comments" name="s_dyi" placeholder="400 words only" rows="12" cols="50"></textarea><br>
+			</div><br>&nbsp;
+			</div>
+		</div>
+
+			<div class="full_subject">
+			<div class="col-xs-12 col-md-12"> 
+			<div>
+			<mark><h3 class="selsub" id="subject1">Selected Subject and Degree</h3></mark>
+			</div>
+		</div>
+
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Subject</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_subject"  required="1">
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">College/Institution</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_colin" required="1">
+			</div>
+			</div><br>&nbsp;
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Year of Postgraduate</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_yopg" placeholder="Current Year" required="1">
+			</div>
+			</div><br>&nbsp;
+		</div>
+
+			<div class="full_qualification">
+			<div class="col-xs-12 col-md-12">
+			<div>
+			<mark><h3 class="selsub" id="qualification1">Qualifications</h3></mark>
+			</div>
+		</div>
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Select Degree</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_seldeg" required="1" >
+				<option >A</option>
+				<option >B</option>
+				<option >C</option>
+				<option >D</option>
+				<option >E</option>
+				<option >F</option>
+				<option >G</option>
+				<option >H</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">College</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_college" placeholder="Enter College Name">
+			</div>
+			</div><br>&nbsp;
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Board/University</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_univ" placeholder="Enter University/Board Name">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Year</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_year" required="1" >
+				<option >2015</option>
+				<option >2016</option>
+				<option >2017</option>
+				<option >2018</option>
+				</select>
+			</div>
+			</div><br>&nbsp;
+
+			<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Class</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_class" required="1" >
+				<option >First Year</option>
+				<option >Second Year</option>
+				<option >Third Year</option>
+				<option >Fourth year</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Marks in CGPA/Percentage</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_marks" required="1">
+			</div>
+		</div><br>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">University Rank</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_urank" required="1">
+				<option >1</option>
+				<option >2</option>
+				<option >3</option>
+				<option >4</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Science/Engg Subjects</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_sub" placeholder="Enter Subject Names">
+			</div>
+		</div><br>&nbsp;
+	</div>
+
+
+		<div class="col-xs-12 col-md-12">
+		<div class="full_otherqualification">				<div>
+		<mark><h3 class="selsub" id="otherqualification1">Other Qualifications</h3></mark>
+		</div>
+	</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Other Degree</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<select class="fa fa-" name="s_odeg1" required="1" >
+				<option >A</option>
+				<option >B</option>
+				<option >C</option>
+				<option >D</option>
+				<option >E</option>
+				<option >F</option>
+				<option >G</option>
+				<option >H</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Other College</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<input type="text" class="fa fa-" name="s_ocollege" placeholder="Enter other College Name">
+			</div>
+		</div><br>&nbsp;
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Other Board/University</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_ouniv" placeholder="Enter other University/Board Name">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Year</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_oyear" required="1">
+				<option >2015</option>
+				<option >2016</option>
+				<option >2017</option>
+				<option >2018</option>
+				</select>
+			</div>
+		</div><br>&nbsp;
+
+
+	<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Class</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_oclass">
+				<option >First Yaer</option>
+				<option >Second Year</option>
+				<option >Third Year</option>
+				<option >Fourth year</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Other Marks in CGPA/Percentage</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_omarks" required="1">
+			</div>
+		</div><br>
+
+
+	<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">University Rank</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_ourank" required="1" >
+				<option >1</option>
+				<option >2</option>
+				<option >3</option>
+				<option >4</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Other Subjects</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_osub" placeholder="Enter other Subject Names">
+			</div>
+		</div><br>&nbsp;
+
+		<div class="col-xs-12 col-md-12">
+			<p>When do you expect to complete M.Sc/B.Sc.(Engg)/B.E/B.Tech/M.E/M.Tech/Any other degree(specify)?<br>
+			</p>
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">I expect to complete my</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_expdegree" placeholder="Enter degree to be completed">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Degree in</p>
+				<p class="textname">Month & Year:</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="month" name="s_expmonth">
+			</div>
+		</div><br>&nbsp;
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-6">
+				<p class="textname">Publications (if any):</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<p class="textname">
+					(please avoid special characters such as *#$%&+"'?~,etc.)
+				</p>
+			</div>
+			<div class="col-md-6 col-xs-12">
+			<textarea class="textarea" id="comments" name="s_pubdetails" placeholder="Enter Your Publications details if any....." rows="5" cols="45"></textarea><br>			
+			</div>
+		</div><br>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12"><br>
+				<p class="textname">Research Experience : <br>(if any)</p>
+			</div>
+			<div class="col-md-4 col-xs-12"><br>
+				<p class="textname">
+					(please avoid special characters such as *#$%&+"'?~,etc.)
+				</p>
+			</div>
+		<div class="col-xs-12 col-md-6"><br>
+			<textarea class="textarea" id="comments" name="s_rexp" placeholder="EnterYour Publications details if any....." rows="5" cols="45"></textarea>
+		</div>
+		</div><br>&nbsp;	
+
+		<div class="col-md-12 col-xs-12">
+			<p class="textname">
+				Names and addresses of two Referees who would fill up the referee reports <br>
+				(They should be your teachers or persons with whom you have interacted with academically)
+			</p>				
+		</div>
+	</div>
+
+
+		<div class="full_referee">
+		<div class="col-md-12">
+			<div class="col-md-6 col-xs-12">
+				<p class="textname" id="referee1"><b>Referee 1 : </b></p>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<p class="textname"><b>Referee 2 : </b></p>
+			</div>
+		</div>
+		
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Name</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r1name" placeholder="Enter Referee's Name" required="1">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Name</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r2name" placeholder="Enter Referee's Name" required="1">
+			</div>
+		</div>	
+		
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Designation</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r1des" placeholder="Enter Referee's Designation" required="1">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Designation</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r2des" placeholder="Enter Referee's Designation" required="1">
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Department</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r1dept" placeholder="Enter Referee's Department" required="1">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Department</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r2dept" placeholder="Enter Referee's Department" required="1">
+			</div>
+		</div> 
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Institution</p> 
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r1inst" placeholder="Enter Referee's Institution Name" required="1">
+			</div>	
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Institution</p> 
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="text" class="fa fa-" name="s_r2inst" placeholder="Enter Referee's Institution Name" required="1">
+			</div> 
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Telephone</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_r1tel" placeholder="Enter Referee's Telephone Number" >
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Telephone</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_r2tel" placeholder="Enter Referee's Telephone Number" >
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Mobile No.</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_r1mobno" placeholder="Enter Referee's Mobile Number">
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Mobile No.</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<input type="number" class="fa fa-" name="s_r2mobno" placeholder="Enter Referee's Mobile Number">
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Email</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				 <input type="email" class="fa fa-" name="s_r1email" required="1" placeholder="Enter Referee's Email" > 	 
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Email</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				 <input type="email" class="fa fa-" name="s_r2email" required="1" placeholder="Enter Referee's Email" > 	 
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Address</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+			<textarea class="form-control" name="s_r1add" placeholder="Enter Referee's Address." rows="6" cols="35"></textarea><br>
+			</div>
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">Address</p> 	
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<textarea class="form-control" name="s_r2add" placeholder="Enter Referee's Address." rows="6" cols="35"></textarea><br>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-12">
+			<p class="textname">
+				<b>
+					Please make sure that you type the email address of the referees correctly.
+				</b>
+			</p><br>
+			<p class="textname">
+				On successful submission of your form, an email will be sent to your Referees with link to fill the Referee Report Form online.<br><br>
+				
+				Any additional information about yourself that has not been covered above.<br><br>
+				
+				Below may include awards, scholarships or any special academic achievements.<br> 
+				
+				(please avoid special characters such as *#$%&+"'?~)
+			</p>
+			<div class="col-md-12 col-xs-12">
+				<textarea class="form-control" id="comments" name="s_addinfo" placeholder="Enter your additional information." rows="6" cols="35"></textarea><br>
+			</div>&nbsp;
+		</div>
+
+		<div class="col-md-12">
+			<div class="col-md-2 col-xs-12">
+				<p class="textname">How did you come to know about VSRP:
+				</p>			
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<select class="fa fa-" name="s_know" required="1">
+				<option >A</option>
+				<option >B</option>
+				<option >C</option>
+				<option >D</option>
+				</select>
+			</div>
+		</div><br>&nbsp;
+
+		<!-- 		<div class="col-xs-12 col-md-12">
+			Captcha code
+		</div>  -->
+
+		<div class="col-md-12 col-xs-12">
+			<input type="checkbox" name="s_agree" value="yes">  I accept and confirm that the information provided above is true to the best of my knowledge 
+			and understand that if at any stage of the selection process, it comes to the notice that false information 
+			has been furnished or there has been suppression of any factual information, 
+			my application for the program will be disqualified.<br>&nbsp;
+		</div>
+
+		<div class="col-xs-12 col-md-12">
+			<button class="button" class="fa fa-" type="submit">Submit</button>
+			<button class="button" class="fa fa-" type="submit">Reset</button> 
+			 </div>
+			</div>
+		
+
+
+
+
+
+</form>
+		</div>
+		
+	
+
+</body>
